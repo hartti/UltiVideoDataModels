@@ -9,27 +9,29 @@ import Foundation
 import Vapor
 
 public struct Game: Identifiable, Hashable, Content {
-  public var _id: String
-  public var streamUrl: String
-  public var description: String
-  public var channelId: String?
-  public var channelTitle: String?
-  public var canBeEmbedded: Bool
+  var _id: String
+  var streamUrl: String
+  var description: String
+  var channelId: String?
+  var channelTitle: String?
+  var canBeEmbedded: Bool
   
-  public var year: Int?
-  public var division: String?
-  public var ultimateType: String?
-  public var seriesType: String?
+  var year: Int?
+  var division: String?
+  var ultimateType: String?
+  var seriesType: String?
   
-  public var gameReporterUrl: String?
-  public var team1name: String?
-  public var team2name: String?
+  var gameReporterUrl: String?
+  var team1id: String?
+  var team2id: String?
+  
+  var teamss: [Team]?
   
   public var id: String {
     _id
   }
     
-  public init(id: String = UUID().uuidString, streamUrl: String, description: String, channelId: String? = nil, channelTitle: String? = nil, canBeEmbedded: Bool, year: Int? = nil, division: String? = nil, ultimateType: String? = nil, seriesType: String? = nil, gameReporterUrl: String? = nil, team1name: String? = nil, team2name: String? = nil) {
+  public init(id: String = UUID().uuidString, streamUrl: String, description: String, channelId: String? = nil, channelTitle: String? = nil, canBeEmbedded: Bool, year: Int? = nil, division: String? = nil, ultimateType: String? = nil, seriesType: String? = nil, gameReporterUrl: String? = nil, team1id: String? = nil, team2id: String? = nil) {
     self._id = id
     self.streamUrl = streamUrl
     self.description = description
@@ -41,8 +43,8 @@ public struct Game: Identifiable, Hashable, Content {
     self.ultimateType = ultimateType
     self.seriesType = seriesType
     self.gameReporterUrl = gameReporterUrl
-    self.team1name = team1name
-    self.team2name = team2name
+    self.team1id = team1id
+    self.team2id = team2id
   }
 }
 

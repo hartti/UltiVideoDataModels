@@ -8,11 +8,12 @@
 import Foundation
 import Vapor
 
-public struct Team: Identifiable, Content {
+public struct Team: Identifiable, Hashable, Content {
   var _id: String
   var name: String
   var score: Int?
   var forGame: String
+  var players: [Player]?
   
   public var id: String {
     _id
