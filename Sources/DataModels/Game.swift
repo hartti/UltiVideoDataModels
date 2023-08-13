@@ -10,20 +10,20 @@ import Vapor
 
 public struct Game: Identifiable, Hashable, Content {
   var _id: String
-  var streamUrl: String
-  var description: String
-  var channelId: String?
-  var channelTitle: String?
-  var canBeEmbedded: Bool
+  public var streamUrl: String
+  public var description: String
+  public var channelId: String?
+  public var channelTitle: String?
+  public var canBeEmbedded: Bool
   
-  var year: Int?
-  var division: String?
-  var ultimateType: String?
-  var seriesType: String?
+  public var year: Int?
+  public var division: String?
+  public var ultimateType: String?
+  public var seriesType: String?
   
-  var gameReporterUrl: String?
-  var team1id: String?
-  var team2id: String?
+  public var gameReporterUrl: String?
+  public var team1id: String?
+  public var team2id: String?
   
   var teamss: [Team]?
   

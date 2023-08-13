@@ -10,8 +10,8 @@ import Vapor
 
 public struct Team: Identifiable, Hashable, Content {
   var _id: String
-  var name: String
-  var score: Int?
+  public var name: String
+  public var score: Int?
   var forGame: String
   var players: [Player]?
   
