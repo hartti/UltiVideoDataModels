@@ -22,16 +22,14 @@ public struct Game: Identifiable, Hashable, Content {
   public var seriesType: String?
   
   public var gameReporterUrl: String?
-  public var team1id: String?
-  public var team2id: String?
   
-  var teamss: [Team]?
+  public var teams: [Team]?
   
   public var id: String {
     _id
   }
     
-  public init(id: String = UUID().uuidString, streamUrl: String, description: String, channelId: String? = nil, channelTitle: String? = nil, canBeEmbedded: Bool, year: Int? = nil, division: String? = nil, ultimateType: String? = nil, seriesType: String? = nil, gameReporterUrl: String? = nil, team1id: String? = nil, team2id: String? = nil) {
+  public init(id: String = UUID().uuidString, streamUrl: String, description: String, channelId: String? = nil, channelTitle: String? = nil, canBeEmbedded: Bool, year: Int? = nil, division: String? = nil, ultimateType: String? = nil, seriesType: String? = nil, gameReporterUrl: String? = nil) {
     self._id = id
     self.streamUrl = streamUrl
     self.description = description
@@ -43,8 +41,6 @@ public struct Game: Identifiable, Hashable, Content {
     self.ultimateType = ultimateType
     self.seriesType = seriesType
     self.gameReporterUrl = gameReporterUrl
-    self.team1id = team1id
-    self.team2id = team2id
   }
 }
 
