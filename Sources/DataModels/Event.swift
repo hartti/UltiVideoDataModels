@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Event.swift
 //  
 //
 //  Created by Hartti Suomela on 8/11/23.
@@ -10,23 +10,23 @@ import Vapor
 
 public struct Event: Identifiable, Hashable, Content {
   var _id: String
-  var forGame: String
-  var timestamp: Double
-  var accurateTimestamp: Bool
-  var highlight: Bool
-  var type: String
-  var team: String
-  var player: String?
-  var throwType: String?
-  var passType: String?
-  var pasttLength: String?
-  var catchType: String?
-  var callType: String?
-  var turnoverType: String?
-  var widthCoord: Double?
-  var lengthCoord: Double?
-  var goal: Bool?
-  var gameFlowStatus: String?
+  public var forGame: String
+  public var timestamp: Double
+  public var accurateTimestamp: Bool
+  public var highlight: Bool
+  public var type: String
+  public var team: String
+  public var player: String?
+  public var throwType: String?
+  public var passType: String?
+  public var pasttLength: String?
+  public var catchType: String?
+  public var callType: String?
+  public var turnoverType: String?
+  public var widthCoord: Double?
+  public var lengthCoord: Double?
+  public var goal: Bool?
+  public var gameFlowStatus: String?
   
   public var id: String {
     _id

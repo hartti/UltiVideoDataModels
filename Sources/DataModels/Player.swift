@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Player.swift
 //  
 //
 //  Created by Hartti Suomela on 8/11/23.
