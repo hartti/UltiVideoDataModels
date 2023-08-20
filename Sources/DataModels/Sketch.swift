@@ -35,7 +35,13 @@ public struct Stroke: Identifiable, Hashable, Content {
     _id
   }
   
-  init(id: String = UUID().uuidString, type: String, dashed: Bool, color: String, points: [Coord]) {
+  public var cgPoints: [CGPoint] {
+    points.compactMap { coord in
+      CGPoint(x: coord.x, y: coord.y)
+    }
+  }
+  
+  public init(id: String = UUID().uuidString, type: String, dashed: Bool, color: String, points: [Coord]) {
     self._id = id
     self.type = type
     self.dashed = dashed
@@ -43,7 +49,7 @@ public struct Stroke: Identifiable, Hashable, Content {
     self.points = points
   }
   
-  init(type: String, dashed: Bool = false, color: String, points: [Coord]) {
+  public init(type: String, dashed: Bool = false, color: String, points: [Coord]) {
     self._id = UUID().uuidString
     self.type = type
     self.dashed = dashed
@@ -55,9 +61,14 @@ public struct Stroke: Identifiable, Hashable, Content {
 public struct Coord: Hashable, Content {
   public var x: Double
   public var y: Double
+  
+  public init(x: Double, y: Double) {
+    self.x = x
+    self.y = y
+  }
 }
 
-enum StrokeType: String, Hashable {
+public enum StrokeType: String, Hashable {
   case circle = "circle"
   case xmark = "xmark"
   case arrow = "arrow"
@@ -65,4 +76,21 @@ enum StrokeType: String, Hashable {
   case rectangle = "rectangle"
 }
 
+extension Sketch {
+  public init() {
+    self._id = UUID().uuidString
+    self.timeStamp = 0
+    self.strokes = [Stroke]()
+  }
+}
+
+extension Stroke {
+  public init() {
+    self._id = UUID().uuidString
+    self.type = "circle"
+    self.dashed = false
+    self.color = "black"
+    self.points = []
+  }
+}
 
