@@ -15,7 +15,7 @@ public struct Game: Identifiable, Hashable, Content {
   public var channelId: String?
   public var channelTitle: String?
   public var canBeEmbedded: Bool
-  public var duration: Int?
+  public var duration: Int
   
   public var year: Int?
   public var division: String?
