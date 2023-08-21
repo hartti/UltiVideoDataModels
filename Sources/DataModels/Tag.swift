@@ -10,6 +10,7 @@ import Vapor
 
 public struct Tag: Identifiable, Hashable, Content {
   var _id: String
+  public var forGame: String
   public var timeStamp: Double
   public var tag: String
   
@@ -17,8 +18,9 @@ public struct Tag: Identifiable, Hashable, Content {
     _id
   }
   
-  public init(id: String = UUID().uuidString, timeStamp: Double, tag: String) {
+  public init(id: String = UUID().uuidString, forGame: String, timeStamp: Double, tag: String) {
     self._id = id
+    self.forGame = forGame
     self.timeStamp = timeStamp
     self.tag = tag
   }
