@@ -18,8 +18,9 @@ public struct Event: Identifiable, Hashable, Content {
   public var team: String
   public var player: String?
   public var throwType: String?
+  public var breakmark: Bool?
   public var passType: String?
-  public var pasttLength: String?
+  public var passLength: String?
   public var catchType: String?
   public var callType: String?
   public var turnoverType: String?
