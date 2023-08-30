@@ -24,16 +24,17 @@ public struct Event: Identifiable, Hashable, Content {
   public var catchType: String?
   public var callType: String?
   public var turnoverType: String?
-  public var widthCoord: Double?
-  public var lengthCoord: Double?
   public var goal: Bool?
+  // Field orientation for the following coordinates: Own endzone at the bottom, opponent's endzone at the top
+  public var x: Double?     // coordinate widthwise
+  public var y: Double?     // coordinate lengthwise
   public var gameFlowStatus: String?
   
   public var id: String {
     _id
   }
   
-  public init(_id: String = UUID().uuidString, forGame: String, timestamp: Double, accurateTimestamp: Bool, highlight: Bool, type: String, team: String) {
+  public init(_id: String = UUID().uuidString, forGame: String, timestamp: Double, accurateTimestamp: Bool, highlight: Bool, type: String, team: String, player: String? = nil, throwType: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, catchType: String? = nil, callType: String? = nil, turnoverType: String? = nil, goal: Bool? = nil, x: Double? = nil, y: Double? = nil) {
     self._id = _id
     self.forGame = forGame
     self.timestamp = timestamp
@@ -41,5 +42,16 @@ public struct Event: Identifiable, Hashable, Content {
     self.highlight = highlight
     self.type = type
     self.team = team
+    self.player = player
+    self.throwType = throwType
+    self.breakmark = breakmark
+    self.passType = passType
+    self.passLength = passLength
+    self.catchType = catchType
+    self.callType = callType
+    self.turnoverType = turnoverType
+    self.goal = goal
+    self.x = x
+    self.y = y
   }
 }
