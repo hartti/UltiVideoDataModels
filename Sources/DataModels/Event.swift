@@ -25,16 +25,19 @@ public struct Event: Identifiable, Hashable, Content {
   public var callType: String?
   public var turnoverType: String?
   public var goal: Bool?
-  // Field orientation for the following coordinates: Own endzone at the bottom, opponent's endzone at the top
-  public var x: Double?     // coordinate widthwise
-  public var y: Double?     // coordinate lengthwise
+  // Standardized field position, offense alsways moving up: Own endzone at the bottom, opponent's endzone at the top
+  public var stdX: Double?     // coordinate widthwise
+  public var stdY: Double?     // coordinate lengthwise
+  // Field position from a fixed viewpoint for the video obeserver and the field diagram
+  public var fixX: Double?     // coordinate according to the visual representation (usually length)
+  public var fixY: Double?     // coordinate according to the visual representation (usually width)
   public var gameFlowStatus: String?
   
   public var id: String {
     _id
   }
   
-  public init(_id: String = UUID().uuidString, forGame: String, timestamp: Double, accurateTimestamp: Bool, highlight: Bool, type: String, team: String, player: String? = nil, throwType: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, catchType: String? = nil, callType: String? = nil, turnoverType: String? = nil, goal: Bool? = nil, x: Double? = nil, y: Double? = nil) {
+  public init(_id: String = UUID().uuidString, forGame: String, timestamp: Double, accurateTimestamp: Bool, highlight: Bool, type: String, team: String, player: String? = nil, throwType: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, catchType: String? = nil, callType: String? = nil, turnoverType: String? = nil, goal: Bool? = nil, stdX: Double? = nil, stdY: Double? = nil, fixX: Double? = nil, fixY: Double? = nil) {
     self._id = _id
     self.forGame = forGame
     self.timestamp = timestamp
@@ -51,7 +54,9 @@ public struct Event: Identifiable, Hashable, Content {
     self.callType = callType
     self.turnoverType = turnoverType
     self.goal = goal
-    self.x = x
-    self.y = y
+    self.stdX = stdX
+    self.stdY = stdY
+    self.fixX = fixX
+    self.fixY = fixY
   }
 }
