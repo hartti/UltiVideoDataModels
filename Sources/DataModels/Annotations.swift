@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 
-public struct GamePlayDetails: Content {
+public struct Annotations: Content {
   public var events: [Event]
   public var tags: [Tag]
   public var sketches: [Sketch]

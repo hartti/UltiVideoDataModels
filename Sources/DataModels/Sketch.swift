@@ -10,18 +10,18 @@ import Vapor
 
 public struct Sketch: Identifiable, Hashable, Content {
   var _id: String
-  public var forGame: String
-  public var timeStamp: Double
+  public var game: String
+  public var t: Double
   public var strokes: [Stroke]
 
   public var id: String {
     _id
   }
   
-  init(id: String = UUID().uuidString, forGame: String, timeStamp: Double) {
+  init(id: String = UUID().uuidString, game: String, t: Double) {
     self._id = id
-    self.forGame = forGame
-    self.timeStamp = timeStamp
+    self.game = game
+    self.t = t
     strokes = []
   }
 }
@@ -81,8 +81,8 @@ public enum StrokeType: String, Hashable {
 extension Sketch {
   public init() {
     self._id = UUID().uuidString
-    self.forGame = ""
-    self.timeStamp = 0
+    self.game = ""
+    self.t = 0
     self.strokes = [Stroke]()
   }
 }

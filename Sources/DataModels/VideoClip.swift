@@ -9,20 +9,20 @@ import Foundation
 import Vapor
 
 public struct VideoClip: Hashable {
-  public var gameId: String
+  public var game: String
   public var gameTitle: String?
   public var description: String
-  public var startTime: Double
-  public var endTime: Double
+  public var startT: Double
+  public var endT: Double
   public var events: [Event]?
   public var tags: [Tag]?
   public var sketches: [Sketch]?
   
-  public init(gameId: String, gameTitle: String? = nil, description: String, startTime: Double, endTime: Double) {
-    self.gameId = gameId
+  public init(game: String, gameTitle: String? = nil, description: String, startT: Double, endT: Double) {
+    self.game = game
     self.gameTitle = gameTitle
     self.description = description
-    self.startTime = startTime
-    self.endTime = endTime
+    self.startT = startT
+    self.endT = endT
   }
 }
