@@ -24,20 +24,16 @@ public struct Event: Identifiable, Hashable, Content {
   public var passType: String?    // The type of the pass for catch, and turnover events (swing, dump, etc)
   public var passLength: String?  // the rough length of the pass for catch and turnover events
   // Standardized field position, offense alsways moving up: Own endzone at the bottom, opponent's endzone at the top
-  public var stdCoord: Coord?
-  public var stdX: Double?        // coordinate widthwise
-  public var stdY: Double?        // coordinate lengthwise
+  public var stdPos: Coord?
   // Field position from a fixed viewpoint for the video obeserver and the field diagram
-  public var fixCoord: Coord?
-  public var fixX: Double?        // coordinate according to the visual representation (usually length)
-  public var fixY: Double?        // coordinate according to the visual representation (usually width)
+  public var screenPos: Coord?
 //  public var gameFlowStatus: String?
   
   public var id: String {
     _id
   }
   
-  public init(_id: String = UUID().uuidString, game: String, t: Double, type: String, team: String, goal: Bool? = nil, uncertain: Bool? = nil, starred: Bool? = nil, calledBack: Bool? = nil, player: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, stdX: Double? = nil, stdY: Double? = nil, fixX: Double? = nil, fixY: Double? = nil) {
+  public init(_id: String = UUID().uuidString, game: String, t: Double, type: String, team: String, goal: Bool? = nil, uncertain: Bool? = nil, starred: Bool? = nil, calledBack: Bool? = nil, player: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, stdPos: Coord? = nil, screenPos: Coord? = nil) {
     self._id = _id
     self.game = game
     self.t = t
@@ -51,9 +47,7 @@ public struct Event: Identifiable, Hashable, Content {
     self.breakmark = breakmark
     self.passType = passType
     self.passLength = passLength
-    self.stdX = stdX
-    self.stdY = stdY
-    self.fixX = fixX
-    self.fixY = fixY
+    self.stdPos = stdPos
+    self.screenPos = screenPos
   }
 }
