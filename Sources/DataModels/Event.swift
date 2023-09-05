@@ -23,6 +23,7 @@ public struct Event: Identifiable, Hashable, Content {
   public var breakmark: Bool?     // is the throw a break mark throw (only used for throw events
   public var passType: String?    // The type of the pass for catch, and turnover events (swing, dump, etc)
   public var passLength: String?  // the rough length of the pass for catch and turnover events
+  public var gameEvent: String?   // start, end, halftime, etc..
   // Standardized field position, offense alsways moving up: Own endzone at the bottom, opponent's endzone at the top
   public var stdPos: Coord?
   // Field position from a fixed viewpoint for the video obeserver and the field diagram
