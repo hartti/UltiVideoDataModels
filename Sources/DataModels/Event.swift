@@ -24,11 +24,14 @@ public struct Event: Identifiable, Hashable, Content {
   public var passType: String?    // The type of the pass for catch, and turnover events (swing, dump, etc)
   public var passLength: String?  // the rough length of the pass for catch and turnover events
   public var gameEvent: String?   // start, end, halftime, etc..
+  
   // Standardized field position, offense alsways moving up: Own endzone at the bottom, opponent's endzone at the top
   public var stdPos: Coord?
   // Field position from a fixed viewpoint for the video obeserver and the field diagram
   public var screenPos: Coord?
-//  public var gameFlowStatus: String?
+  
+  // Lineups, only used in Pull events
+  public var lineups: [Lineup]?
   
   public var id: String {
     _id
@@ -50,5 +53,15 @@ public struct Event: Identifiable, Hashable, Content {
     self.passLength = passLength
     self.stdPos = stdPos
     self.screenPos = screenPos
+  }
+}
+
+public struct Lineup: Hashable, Content {
+  public var team: String
+  public var players: [String]
+  
+  public init(team: String, players: [String]) {
+    self.team = team
+    self.players = players
   }
 }
