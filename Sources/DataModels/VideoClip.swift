@@ -8,7 +8,7 @@
 import Foundation
 import Vapor
 
-public struct VideoClip: Hashable {
+public struct VideoClip: Hashable, Content {
   public var game: String
   public var gameTitle: String?
   public var description: String
