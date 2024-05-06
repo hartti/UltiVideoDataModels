@@ -14,6 +14,7 @@ public struct Event: Identifiable, Hashable, Content {
   public var t: Double            // Timestanmp of the event in seconds
   public var type: String         // Type of the event, like pull, catch, throw, turnover, etc
   public var team: String         // UUID string of the team
+  public var offDirection: String?  // Direction of the offense on the video
   public var goal: Bool?          // If the catch was also a score
   public var uncertain: Bool?     // True if some of the event details (like time stamp, or throwtype) are uncertain, false or nil othwerwise
   public var starred: Bool?       // True if highlight, false of nil otherwise
@@ -37,12 +38,13 @@ public struct Event: Identifiable, Hashable, Content {
     _id
   }
   
-  public init(_id: String = UUID().uuidString, game: String, t: Double, type: String, team: String, goal: Bool? = nil, uncertain: Bool? = nil, starred: Bool? = nil, calledBack: Bool? = nil, player: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, stdPos: Coord? = nil, tappedXY: Coord? = nil) {
+  public init(_id: String = UUID().uuidString, game: String, t: Double, type: String, team: String, offDirection: String? = nil, goal: Bool? = nil, uncertain: Bool? = nil, starred: Bool? = nil, calledBack: Bool? = nil, player: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, stdPos: Coord? = nil, tappedXY: Coord? = nil) {
     self._id = _id
     self.game = game
     self.t = t
     self.type = type
     self.team = team
+    self.offDirection = offDirection
     self.goal = goal
     self.uncertain = uncertain
     self.starred = starred
