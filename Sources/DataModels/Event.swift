@@ -38,7 +38,7 @@ public struct Event: Identifiable, Hashable, Content {
     _id
   }
   
-  public init(_id: String = UUID().uuidString, game: String, t: Double, type: String, team: String, offDirection: String? = nil, goal: Bool? = nil, uncertain: Bool? = nil, starred: Bool? = nil, calledBack: Bool? = nil, player: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, stdPos: Coord? = nil, tappedXY: Coord? = nil) {
+  public init(_id: String = UUID().uuidString, game: String, t: Double, type: String, team: String, offDirection: String? = nil, goal: Bool? = nil, uncertain: Bool? = nil, starred: Bool? = nil, calledBack: Bool? = nil, player: String? = nil, subType: String? = nil, breakmark: Bool? = nil, passType: String? = nil, passLength: String? = nil, stdPos: Coord? = nil, tappedXY: Coord? = nil) {
     self._id = _id
     self.game = game
     self.t = t
@@ -50,6 +50,7 @@ public struct Event: Identifiable, Hashable, Content {
     self.starred = starred
     self.calledBack = calledBack
     self.player = player
+    self.subType = subType
     self.breakmark = breakmark
     self.passType = passType
     self.passLength = passLength
