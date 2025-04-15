@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import Vapor
 
-public struct Game: Identifiable, Hashable, Content {
+public struct Game: Identifiable, Hashable {
   var _id: String
   public var streamUrl: String
   public var description: String
