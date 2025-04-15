@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Game: Identifiable, Hashable {
+public struct Game: Identifiable, Hashable, Codable {
   var _id: String
   public var streamUrl: String
   public var description: String
